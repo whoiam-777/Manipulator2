@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Профессиональная аренда манипулятора Алматы | KAZ-SPEC-TECH</title>
-    <meta name="description" content="Услуги манипулятора в Алматы для бизнеса и частных лиц. Официальный договор, НДС. Перевозка грузов до 10 тонн. Подача 30 минут.">
-
+    <title>Манипулятор Алматы | Срочная подача | KazSpecTech</title>
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17833317410"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -25,302 +24,297 @@
       return false;
     }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
         :root {
-            --color-primary: #0EA5E9; /* Современный голубой */
-            --color-primary-dark: #0284C7;
-            --color-secondary: #F97316; /* Яркий оранжевый для акцентов */
-            --color-dark: #0F172A; /* Глубокий темный */
-            --color-light: #F8FAFC;
+            --neon-blue: #00f2ff;
+            --neon-orange: #ff5e00;
+            --deep-bg: #0b1120;
+            --glass: rgba(255, 255, 255, 0.05);
         }
-        body { font-family: 'Inter', sans-serif; color: var(--color-dark); background: var(--color-light); }
-        h1, h2, h3, .font-heading { font-family: 'Manrope', sans-serif; }
         
-        /* Градиентный фон для главного экрана */
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(248,250,252, 0.95) 0%, rgba(224,242,254, 0.9) 100%), url('images/manipulator-hero.jpg');
-            background-size: cover; background-position: center;
-        }
+        body { font-family: 'Exo 2', sans-serif; background-color: var(--deep-bg); color: white; overflow-x: hidden; }
+        h1, h2, .font-tech { font-family: 'Russo One', sans-serif; text-transform: uppercase; }
 
-        /* Кастомные анимации кнопок */
-        .btn-primary {
-            background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
-            box-shadow: 0 4px 15px -3px rgba(14, 165, 233, 0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Фоновые эффекты */
+        .bg-grid {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -3px rgba(14, 165, 233, 0.6); }
         
-        .btn-accent {
-            background-color: var(--color-secondary);
-            box-shadow: 0 4px 15px -3px rgba(249, 115, 22, 0.5);
-            animation: pulse-accent 2s infinite;
-        }
-        .btn-accent:hover { transform: translateY(-2px); background-color: #ea580c; }
+        /* Неоновое свечение текста */
+        .text-glow-blue { text-shadow: 0 0 10px rgba(0, 242, 255, 0.7); }
+        .text-glow-orange { text-shadow: 0 0 15px rgba(255, 94, 0, 0.6); }
 
-        @keyframes pulse-accent {
-            0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
-        }
+        /* Анимация плавания */
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        .float-anim-delay { animation: float 6s ease-in-out infinite; animation-delay: 2s; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
 
-        /* Стили для карточек */
-        .feature-card {
-            background: white; border-radius: 16px; border: 1px solid #E2E8F0;
-            transition: all 0.3s ease;
+        /* Бегущая строка */
+        .marquee-container { overflow: hidden; white-space: nowrap; background: var(--neon-orange); transform: rotate(-2deg) scale(1.1); }
+        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; font-weight: bold; color: black; font-size: 1.2rem; text-transform: uppercase; padding: 10px 0; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Стеклянные карточки */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
         }
-        .feature-card:hover {
-            border-color: var(--color-primary); transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-        }
-        .feature-icon-box {
-            background: #E0F2FE; color: var(--color-primary);
-            transition: all 0.3s ease;
-        }
-        .feature-card:hover .feature-icon-box {
-            background: var(--color-primary); color: white;
+        .glass-card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            transform: translateY(-5px);
         }
 
-        /* Мобильный нижний бар */
-        .mobile-bottom-bar {
-            position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
-            display: flex; box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+        /* Кнопки */
+        .btn-neon {
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            box-shadow: 0 0 15px #0072ff;
+            position: relative; overflow: hidden;
         }
+        .btn-neon::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
+
+        .btn-hot {
+            background: linear-gradient(45deg, #ff9900, #ff5e00);
+            box-shadow: 0 0 15px #ff5e00;
+            animation: pulse-hot 1.5s infinite;
+        }
+        @keyframes pulse-hot { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
     </style>
 </head>
-<body class="pb-16 md:pb-0"> <header class="bg-white/90 backdrop-blur-md fixed w-full z-50 top-0 border-b border-slate-200">
-        <div class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="bg-primary p-2 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-blue-600">
-                      <path d="M3.375 4.5C2.339 4.5 1.5 5.339 1.5 6.375V13.5h12V6.375c0-1.036-.839-1.875-1.875-1.875h-8.25zM13.5 15H1.5v2.625c0 1.035.839 1.875 1.875 1.875h.375a3 3 0 116 0h3a3 3 0 116 0h.375c1.036 0 1.875-.84 1.875-1.875V15h-12z" />
-                      <path d="M8.25 4.5c0-1.036.839-1.875 1.875-1.875h4.5c1.036 0 1.875.839 1.875 1.875V13.5h-8.25V4.5z" />
-                      <circle cx="9.75" cy="17.625" r="1.5" />
-                      <circle cx="17.25" cy="17.625" r="1.5" />
-                    </svg>
+<body class="bg-grid relative pb-20 md:pb-0">
+
+    <div class="fixed top-20 left-10 text-8xl text-blue-500/10 float-anim pointer-events-none z-0"><i class="fas fa-cog"></i></div>
+    <div class="fixed bottom-40 right-10 text-9xl text-orange-500/10 float-anim-delay pointer-events-none z-0"><i class="fas fa-truck-pickup"></i></div>
+
+    <header class="fixed w-full z-50 bg-[#0b1120]/90 backdrop-blur border-b border-white/10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-xl shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                    <i class="fas fa-rocket text-white"></i>
                 </div>
                 <div>
-                    <h1 class="font-heading font-extrabold text-xl md:text-2xl text-slate-800 leading-none">KAZ<span class="text-blue-600">SPEC</span></h1>
-                    <p class="text-xs text-slate-500 tracking-wider font-medium">ПРОФЕССИОНАЛЬНАЯ АРЕНДА</p>
+                    <div class="font-tech text-xl leading-none tracking-wider">KAZ<span class="text-[#00f2ff] text-glow-blue">SPEC</span></div>
+                    <div class="text-[10px] text-gray-400 font-bold tracking-[0.2em]">ALMATY 24/7</div>
                 </div>
             </div>
-
-            <div class="hidden md:flex items-center gap-6">
+            
+            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="hidden md:flex items-center gap-3 group">
                 <div class="text-right">
-                    <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="font-heading font-bold text-xl text-slate-800 hover:text-blue-600 transition block">+7 747 464 0078</a>
-                    <span class="text-sm text-green-600 flex items-center justify-end gap-1"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span> Сейчас работаем</span>
+                    <div class="text-xs text-green-400 font-bold flex justify-end items-center gap-1">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> Свободен
+                    </div>
+                    <div class="font-tech text-2xl group-hover:text-[#00f2ff] transition">+7 747 464 0078</div>
                 </div>
-                <a href="#calc" class="btn-primary text-white font-semibold px-6 py-3 rounded-xl">Рассчитать стоимость</a>
-            </div>
-
-            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="md:hidden bg-blue-100 text-blue-600 p-3 rounded-full animate-pulse">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                  <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.96 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-                </svg>
+                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-green-400 border border-green-500/30 group-hover:bg-green-500 group-hover:text-black transition duration-300">
+                    <i class="fas fa-phone-alt animate-tada"></i>
+                </div>
+            </a>
+            
+            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="md:hidden btn-hot w-10 h-10 rounded-full flex items-center justify-center text-white text-lg">
+                <i class="fas fa-phone"></i>
             </a>
         </div>
     </header>
 
-    <section class="hero-gradient pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="w-full lg:w-1/2 relative z-10" data-aos="fade-right">
-                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-600 text-sm font-semibold mb-4">🚀 Подача машины от 30 минут</span>
-                    <h2 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-tight mb-6">
-                        Услуги манипулятора <br> в Алматы <span class="text-blue-600">для бизнеса и частных лиц</span>
-                    </h2>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed md:pr-10">
-                        Официальный перевозчик. Собственный автопарк техники от 3 до 10 тонн. Предоставляем полный пакет документов (ЭСФ, АВР). Гарантия сохранности груза.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-accent text-white font-bold text-lg px-8 py-4 rounded-xl text-center flex items-center justify-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.96 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" /></svg>
-                            Заказать сейчас
-                        </a>
-                        <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="bg-white text-green-600 border-2 border-green-500 font-bold text-lg px-8 py-4 rounded-xl text-center flex items-center justify-center gap-2 hover:bg-green-50 transition">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.335-.114 0-.248.015-.38.015-.133 0-.347.05-.525.248-.182.198-.692.677-.692 1.65 0 .973.71 1.914.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.835.326 1.12.418.474.152.904.129 1.246.08.38-.054 1.17-.48 1.335-.945.164-.464.164-.86.114-.945-.05-.088-.182-.133-.38-.232z"/></svg>
-                            Написать в WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="w-full lg:w-1/2" data-aos="fade-left" data-aos-delay="100">
-                    <div class="bg-white rounded-2xl shadow-2xl shadow-blue-100/50 p-6 md:p-8 border border-slate-100 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">ONLINE ЗАЯВКА</div>
-                        <h3 class="font-heading font-bold text-2xl mb-6 text-slate-800">Калькулятор перевозки</h3>
-                        
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Что везем?</label>
-                                <div class="grid grid-cols-3 gap-2">
-                                    <div class="border-2 border-blue-500 bg-blue-50 rounded-xl p-3 text-center cursor-pointer transition">
-                                        <div class="text-2xl mb-1">🏗️</div>
-                                        <div class="text-xs font-bold text-blue-800">Стройматериалы</div>
-                                    </div>
-                                    <div class="border-2 border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:border-blue-300 transition">
-                                        <div class="text-2xl mb-1">🏠</div>
-                                        <div class="text-xs font-medium text-slate-600">Бытовка/Контейнер</div>
-                                    </div>
-                                    <div class="border-2 border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:border-blue-300 transition">
-                                        <div class="text-2xl mb-1">⚙️</div>
-                                        <div class="text-xs font-medium text-slate-600">Оборудование</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <label class="block text-sm font-medium text-slate-700">Примерный вес груза:</label>
-                                    <span class="font-bold text-blue-600">до 5 тонн</span>
-                                </div>
-                                <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
-                                    <div class="h-full bg-blue-500 w-1/2 rounded-full relative">
-                                        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-white border-4 border-blue-600 rounded-full shadow-lg"></div>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between text-xs text-slate-400 mt-1">
-                                    <span>1 тонна</span><span>10 тонн</span>
-                                </div>
-                            </div>
-
-                            <div id="calc" class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                                <div class="flex justify-between items-center mb-4">
-                                    <span class="text-slate-600 font-medium">Ориентировочное время:</span>
-                                    <span class="font-bold text-slate-800">2 часа</span>
-                                </div>
-                                <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-primary w-full text-white font-bold text-lg py-4 rounded-xl flex justify-center items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.96 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" /></svg>
-                                    Узнать точную стоимость
-                                </a>
-                                <p class="text-center text-xs text-slate-400 mt-3">Диспетчер рассчитает цену за 2 минуты</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="relative pt-24 pb-12 overflow-hidden min-h-[85vh] flex items-center">
+        <div class="absolute inset-0 z-0">
+            <img src="images/manipulator-hero.jpg" class="w-full h-full object-cover opacity-40" alt="Манипулятор фон">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1120] via-[#0b1120]/80 to-transparent"></div>
         </div>
-    </section>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-slate-900 mb-4">Почему выбирают нас?</h2>
-                <p class="text-lg text-slate-600">Мы не просто "частник с машиной". Мы — надежная транспортная компания с прозрачными условиями работы.</p>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-900/50 border border-blue-500/50 text-blue-300 text-xs font-bold mb-6 backdrop-blur animate__animated animate__fadeInDown">
+                <i class="fas fa-bolt text-yellow-400"></i> ПОДАЧА 20-30 МИНУТ
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="feature-card p-8" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="feature-icon-box w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                        </svg>
+            <h1 class="font-tech text-5xl md:text-7xl leading-none mb-6 animate__animated animate__fadeInLeft">
+                МАНИПУЛЯТОР <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2ff] to-[#0066ff] text-glow-blue">АЛМАТЫ</span>
+            </h1>
+
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-xl animate__animated animate__fadeInLeft animate__delay-1s border-l-4 border-[#ff5e00] pl-4">
+                Срочная перевозка грузов до 10 тонн. <br>
+                <b>Не теряйте время на калькуляторы.</b> <br> Скиньте фото груза — скажем цену сразу.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-lg animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="btn-neon py-5 px-6 rounded-xl flex items-center justify-between group">
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                        <div class="text-left">
+                            <div class="text-xs opacity-80 font-bold uppercase">Узнать цену</div>
+                            <div class="font-bold text-lg leading-none">Написать в WhatsApp</div>
+                        </div>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-slate-800 mb-3">Полный пакет документов</h3>
-                    <p class="text-slate-600">Работаем с НДС и без. Предоставляем ЭСФ, акты выполненных работ, договоры для юрлиц.</p>
+                    <i class="fas fa-arrow-right group-hover:translate-x-2 transition"></i>
+                </a>
+                
+                <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="glass-card py-5 px-6 rounded-xl flex items-center justify-between hover:bg-white/10 text-white border-white/20">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-volume text-orange-500 text-3xl"></i>
+                        <div class="text-left">
+                            <div class="text-xs opacity-60 font-bold uppercase">Срочный вызов</div>
+                            <div class="font-bold text-lg leading-none">Позвонить</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-4 bg-[#ff5e00] text-black font-bold relative z-20 overflow-hidden -mt-10 md:-mt-16 transform -rotate-1 shadow-[0_0_20px_rgba(255,94,0,0.5)]">
+        <div class="marquee-content">
+            <i class="fas fa-star mx-4"></i> СРОЧНАЯ ПОДАЧА <i class="fas fa-bolt mx-4"></i> РАБОТАЕМ 24/7 <i class="fas fa-truck mx-4"></i> ГРУЗЫ ДО 10 ТОНН <i class="fas fa-map-marker-alt mx-4"></i> АЛМАТЫ И ОБЛАСТЬ <i class="fas fa-shield-alt mx-4"></i> СТРАХОВКА ГРУЗА
+             <i class="fas fa-star mx-4"></i> СРОЧНАЯ ПОДАЧА <i class="fas fa-bolt mx-4"></i> РАБОТАЕМ 24/7 <i class="fas fa-truck mx-4"></i> ГРУЗЫ ДО 10 ТОНН <i class="fas fa-map-marker-alt mx-4"></i> АЛМАТЫ И ОБЛАСТЬ <i class="fas fa-shield-alt mx-4"></i> СТРАХОВКА ГРУЗА
+        </div>
+    </div>
+
+    <section class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="font-tech text-3xl md:text-4xl text-center mb-12"><span class="text-[#00f2ff]">ЧТО МЫ</span> ПЕРЕВОЗИМ</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group" data-aos="zoom-in">
+                    <div class="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center text-3xl text-[#00f2ff] mb-4 group-hover:scale-110 transition duration-500">
+                        <i class="fas fa-dolly-flatbed"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Стройматериалы</h3>
+                    <p class="text-xs text-gray-400">Кирпич, блоки, плитка</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-orange-600/20 rounded-full flex items-center justify-center text-3xl text-[#ff5e00] mb-4 group-hover:scale-110 transition duration-500">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Бытовки</h3>
+                    <p class="text-xs text-gray-400">Контейнеры, киоски</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center text-3xl text-purple-400 mb-4 group-hover:scale-110 transition duration-500">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Оборудование</h3>
+                    <p class="text-xs text-gray-400">Станки, генераторы</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center text-3xl text-green-400 mb-4 group-hover:scale-110 transition duration-500">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Дерево/Лес</h3>
+                    <p class="text-xs text-gray-400">Доски, срубы, деревья</p>
                 </div>
                 
-                <div class="feature-card p-8" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="feature-icon-box w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                 <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center text-3xl text-red-400 mb-4 group-hover:scale-110 transition duration-500">
+                        <i class="fas fa-car-crash"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-slate-800 mb-3">Фиксированная цена</h3>
-                    <p class="text-slate-600">Стоимость озвучивается диспетчером и не меняется в процессе работы. Никаких скрытых доплат.</p>
+                    <h3 class="font-bold text-lg mb-1">Авто после ДТП</h3>
+                    <p class="text-xs text-gray-400">Погрузка с дороги</p>
                 </div>
 
-                <div class="feature-card p-8" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="feature-icon-box w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                        </svg>
+                 <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-yellow-600/20 rounded-full flex items-center justify-center text-3xl text-yellow-400 mb-4 group-hover:scale-110 transition duration-500">
+                        <i class="fas fa-ring"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-slate-800 mb-3">Опытные операторы</h3>
-                    <p class="text-slate-600">Стаж работы водителей от 8 лет. Бережная погрузка сложных и хрупких грузов.</p>
-                </div>
-
-                <div class="feature-card p-8" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="feature-icon-box w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl text-slate-800 mb-3">Работаем 24/7</h3>
-                    <p class="text-slate-600">Подача машины в любой район Алматы и области. Работаем в выходные и праздники.</p>
+                    <h3 class="font-bold text-lg mb-1">Кольца ЖБИ</h3>
+                    <p class="text-xs text-gray-400">Монтаж колодцев</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-slate-50">
-       <div class="container mx-auto px-4">
-           <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-slate-900 text-center mb-12" data-aos="fade-up">Наш автопарк в работе</h2>
-           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-               <div class="group relative overflow-hidden rounded-2xl h-48 md:h-64" data-aos="fade-up" data-aos-delay="0">
-                   <img src="images/manipulator-1.jpg" alt="Манипулятор 1" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                       <span class="text-white font-bold">Погрузка кирпича</span>
-                   </div>
-               </div>
-               <div class="group relative overflow-hidden rounded-2xl h-48 md:h-64" data-aos="fade-up" data-aos-delay="100">
-                   <img src="images/manipulator-2.jpg" alt="Манипулятор 2" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                       <span class="text-white font-bold">Перевозка бытовки</span>
-                   </div>
-               </div>
-               <div class="group relative overflow-hidden rounded-2xl h-48 md:h-64" data-aos="fade-up" data-aos-delay="200">
-                   <img src="images/manipulator-3.jpg" alt="Манипулятор 3" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                       <span class="text-white font-bold">Монтаж колец</span>
-                   </div>
-               </div>
-               <div class="group relative overflow-hidden rounded-2xl h-48 md:h-64" data-aos="fade-up" data-aos-delay="300">
-                   <img src="images/manipulator-about.jpg" alt="Манипулятор 4" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                       <span class="text-white font-bold">Городские перевозки</span>
-                   </div>
-               </div>
-           </div>
-       </div>
+    <section class="py-10 bg-black/30">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1 bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-white/5 relative overflow-hidden" data-aos="fade-right">
+                    <div class="absolute -right-5 -bottom-5 text-9xl text-white/5"><i class="fas fa-stopwatch"></i></div>
+                    <h3 class="font-tech text-2xl text-[#00f2ff] mb-4">СКОРОСТЬ</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Подача за 20-40 минут</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Быстрая погрузка</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Знаем короткие маршруты</li>
+                    </ul>
+                </div>
+                
+                 <div class="flex-1 bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-white/5 relative overflow-hidden" data-aos="fade-left">
+                    <div class="absolute -right-5 -bottom-5 text-9xl text-white/5"><i class="fas fa-wallet"></i></div>
+                    <h3 class="font-tech text-2xl text-[#ff5e00] mb-4">ЧЕСТНАЯ ЦЕНА</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Оплата по факту</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Перевод Kaspi</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Документы для Юр. лиц</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-12">
-        <div class="container mx-auto px-4 text-center">
-            <div class="mb-6">
-                <h2 class="font-heading font-extrabold text-2xl text-white">KAZ<span class="text-blue-500">SPEC</span></h2>
-            </div>
-            <p class="mb-6">Профессиональные услуги спецтехники в Алматы.</p>
-            <div class="flex justify-center gap-6 mb-8">
-                <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="hover:text-white transition">Позвонить</a>
-                <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="hover:text-white transition">WhatsApp</a>
-            </div>
-            <p class="text-sm">&copy; 2025 KAZSPEC. Все права защищены.</p>
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+             <h2 class="font-tech text-3xl md:text-4xl text-center mb-12">НАША <span class="text-purple-500">ТЕХНИКА</span></h2>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                 <div class="h-64 rounded-2xl overflow-hidden relative group border-2 border-transparent hover:border-[#00f2ff] transition-all" data-aos="flip-left">
+                     <img src="images/manipulator-1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                     <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                         <span class="font-tech text-xl text-white border-2 border-white px-4 py-2">МАНИПУЛЯТОР 5т</span>
+                     </div>
+                 </div>
+                 <div class="h-64 rounded-2xl overflow-hidden relative group border-2 border-transparent hover:border-[#ff5e00] transition-all" data-aos="flip-up">
+                     <img src="images/manipulator-2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                     <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                         <span class="font-tech text-xl text-white border-2 border-white px-4 py-2">МАНИПУЛЯТОР 7т</span>
+                     </div>
+                 </div>
+                 <div class="h-64 rounded-2xl overflow-hidden relative group border-2 border-transparent hover:border-purple-500 transition-all" data-aos="flip-right">
+                     <img src="images/manipulator-3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                     <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                         <span class="font-tech text-xl text-white border-2 border-white px-4 py-2">БОРТ 10т</span>
+                     </div>
+                 </div>
+             </div>
         </div>
+    </section>
+
+    <footer class="bg-black py-10 text-center border-t border-white/10 mb-16 md:mb-0">
+        <div class="text-2xl font-tech mb-4">KAZ<span class="text-[#00f2ff]">SPEC</span></div>
+        <div class="flex justify-center gap-6 text-3xl mb-6">
+            <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="text-green-500 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="text-blue-500 hover:scale-125 transition"><i class="fab fa-telegram"></i></a>
+            <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="text-orange-500 hover:scale-125 transition"><i class="fas fa-phone-square"></i></a>
+        </div>
+        <p class="text-gray-500 text-sm">Алматы 2025. Все права защищены.</p>
     </footer>
 
-    <div class="mobile-bottom-bar md:hidden bg-white border-t border-slate-200 p-2 gap-2">
-        <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 bg-blue-600 text-white rounded-xl flex flex-col items-center justify-center py-2 active:scale-95 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mb-1"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.96 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" /></svg>
-            <span class="text-xs font-bold leading-none">Позвонить</span>
+    <div class="fixed bottom-0 left-0 right-0 bg-[#0b1120]/95 backdrop-blur border-t border-white/10 p-3 md:hidden z-50 flex gap-3">
+        <a href="tel:+77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl flex items-center justify-center py-3 font-bold text-lg shadow-[0_0_15px_rgba(59,130,246,0.4)] active:scale-95 transition">
+            <i class="fas fa-phone-alt mr-2 animate-pulse"></i> Вызвать
         </a>
-        <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 bg-green-500 text-white rounded-xl flex flex-col items-center justify-center py-2 active:scale-95 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp mb-1" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.335-.114 0-.248.015-.38.015-.133 0-.347.05-.525.248-.182.198-.692.677-.692 1.65 0 .973.71 1.914.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.835.326 1.12.418.474.152.904.129 1.246.08.38-.054 1.17-.48 1.335-.945.164-.464.164-.86.114-.945-.05-.088-.182-.133-.38-.232z"/></svg>
-            <span class="text-xs font-bold leading-none">WhatsApp</span>
+        <a href="https://wa.me/77474640078" onclick="return gtag_report_conversion(this.href);" class="flex-1 bg-gradient-to-r from-green-600 to-green-500 text-white rounded-xl flex items-center justify-center py-3 font-bold text-lg shadow-[0_0_15px_rgba(34,197,94,0.4)] active:scale-95 transition">
+            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
         </a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            once: true, // Анимация проигрывается только один раз
-            duration: 800, // Длительность анимации
-            offset: 100, // Начинать анимацию заранее
-            disable: 'mobile' // Отключить на очень старых телефонах для скорости
-        });
+        AOS.init({ once: false, mirror: true, duration: 800, offset: 50 });
     </script>
 </body>
 </html>
